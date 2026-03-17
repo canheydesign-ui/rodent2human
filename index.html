@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Menü tıklamaları için yumuşak kayma */
+            scroll-behavior: smooth; /* Sayfa içi kaymaların yumuşak olması için şart */
         }
 
         body {
@@ -48,6 +48,8 @@
             font-size: 1.5rem;
             letter-spacing: -1px;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
         }
 
         .nav-links {
@@ -102,15 +104,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .section-tag {
-            color: var(--text-gray);
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
         h2 {
             font-family: 'Archivo Black', sans-serif;
             font-size: 2.5rem;
@@ -134,6 +127,7 @@
             border-radius: 4px;
             transition: 0.4s;
             margin-top: 20px;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -159,18 +153,18 @@
 <body>
 
     <nav>
-        <div class="logo" onclick="window.scrollTo(0,0)">R2H</div>
+        <a href="index.html" class="logo">R2H</a>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="#about">About</a>
-            <a href="#technology">Technology</a>
-            <a href="#pipeline">Pipeline</a>
-            <a href="#demo">Get Demo</a>
+            <a href="pipeline.html">Pipeline</a> <a href="#demo">Get Demo</a>
         </div>
     </nav>
 
     <header class="hero">
         <h1>WELCOME TO<br>RODENT2HUMAN</h1>
         <p>From rodent models to human insight.</p>
+        <a href="#about" class="btn">Learn More</a>
     </header>
 
     <section id="about" class="content">
@@ -182,7 +176,7 @@
 
     <section id="demo" class="content" style="text-align: center;">
         <h2>this is where the transformation begins.</h2>
-        <a href="mailto:info@rodent2human.com" class="btn">Discover our first product</a>
+        <a href="pipeline.html" class="btn">Discover our first product</a>
     </section>
 
     <footer>
