@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline | Rodent2Human</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e0e;
+            --accent: #ffffff;
+            --gray: #a0a0a0;
+            --border: #333333;
+            --blue-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--accent);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation (Geri dönüş için) --- */
+        nav {
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { font-family: 'Archivo Black', sans-serif; text-decoration: none; color: white; font-size: 1.5rem; }
+        .back-link { color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .back-link:hover { color: white; }
+
+        /* --- Pipeline Section --- */
+        .pipeline-section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .pipeline-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            text-transform: uppercase;
+            max-width: 900px;
+            margin: 0 auto 80px;
+            line-height: 1.3;
+        }
+
+        /* Timeline Header (Now, Next, Beyond) */
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .step-label {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        .step-label.active {
+            opacity: 1;
+            background: linear-gradient(to right, #4facfe, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .arrow {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--border);
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--border);
+            border-right: 2px solid var(--border);
+            transform: rotate(45deg);
+        }
+
+        /* Product Cards Grid */
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px; /* İncelikli çizgi efekti için */
+            background-color: var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
+            border: 1px solid var(--border);
+        }
+
+        .product-card {
+            background-color: var(--bg);
+            padding: 40px 30px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            min-height: 450px;
+            position: relative;
+        }
+
+        .product-meta {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--gray);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-card h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .product-card p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* İkon Yer Tutucuları (Görseldeki ikonları CSS ile stilize ettim) */
+        .icon-box {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4facfe;
+        }
+
+        /* Mouse Efekti */
+        .product-card:hover {
+            background-color: #111;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .pipeline-grid { grid-template-columns: 1fr; }
+            .timeline-header { display: none; }
+            .product-card { min-height: auto; border-bottom: 1px solid var(--border); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">R2H</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <section class="pipeline-section">
+        <h1 class="pipeline-title">Discover our pipeline of solutions transforming drug development without animals.</h1>
+
+        <div class="timeline-header">
+            <div class="step-label active">Now</div>
+            <div class="arrow"></div>
+            <div class="step-label">Next</div>
+            <div class="arrow"></div>
+            <div class="step-label">Beyond</div>
+        </div>
+
+        <div class="pipeline-grid">
+            
+            <div class="product-card">
+                <div class="product-meta">
+                    <span>PRODUCT 1</span>
+                    <div class="icon-box">🧬</div>
+                </div>
+                <h3>AltToxAI</h3>
+                <p>Provides clinical pathology readouts in silico, enabling researchers to identify toxicity signals early. Reduces animal testing while supporting 3Rs principles.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-meta">
+                    <span>PRODUCT 2</span>
+                    <div class="icon-box">🤖</div>
+                </div>
+                <h3>NeoRevive</h3>
+                <p>Revives failed drugs by integrating LLM based system, clinical expert oversight, and AltToxAI toxicity predictions. Identifies new contexts where these compounds can come back to life.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-meta">
+                    <span>PRODUCT 3</span>
+                    <div class="icon-box">👥</div>
+                </div>
+                <h3>Human-Level Drug Simulation</h3>
+                <p>Explores promising and failed drugs across digital human counterparts to guide the next era of safer, personalized medicine.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
