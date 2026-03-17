@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth; /* Sayfa içi kaymaların yumuşak olması için şart */
+            scroll-behavior: smooth; /* Sayfa içi kaymalar için */
         }
 
         body {
@@ -63,9 +63,10 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: 0.3s;
+            text-transform: uppercase; /* Tutarlı görünüm */
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: var(--accent);
         }
 
@@ -108,6 +109,7 @@
             font-family: 'Archivo Black', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
         .description {
@@ -128,6 +130,9 @@
             transition: 0.4s;
             margin-top: 20px;
             cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
@@ -141,10 +146,11 @@
             text-align: center;
             color: #555;
             font-size: 0.9rem;
+            background-color: #0a0a0a;
         }
 
         /* Mobile */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .nav-links { display: none; }
             section.content { padding: 80px 5%; }
         }
@@ -155,9 +161,11 @@
     <nav>
         <a href="index.html" class="logo">R2H</a>
         <div class="nav-links">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="pipeline.html">Pipeline</a> <a href="#demo">Get Demo</a>
+            <a href="alttoxai.html">AltToxAI</a>
+            <a href="pipeline.html">Pipeline</a>
+            <a href="#demo">Get Demo</a>
         </div>
     </nav>
 
@@ -176,11 +184,11 @@
 
     <section id="demo" class="content" style="text-align: center;">
         <h2>this is where the transformation begins.</h2>
-        <a href="pipeline.html" class="btn">Discover our first product</a>
+        <a href="alttoxai.html" class="btn">Discover AltToxAI</a>
     </section>
 
     <footer>
-        <p>&copy; 2025 Rodent2Human - All Rights Reserved.</p>
+        <p>&copy; 2026 Rodent2Human - All Rights Reserved.</p>
     </footer>
 
 </body>
